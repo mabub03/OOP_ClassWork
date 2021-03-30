@@ -1,2 +1,0 @@
-2, Joe, Doe, 1.0
-4, Billy, Joe, 1.5
