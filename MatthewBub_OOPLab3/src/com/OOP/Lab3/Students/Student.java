@@ -1,31 +1,58 @@
 package com.OOP.Lab3.Students;
 
+import java.io.*;
+
 public class Student {
-    private int ID;
-    private String FirstName;
-    private String LastName;
-    private double GPA;
+    int Id;
+    String FirstName;
+    String LastName;
+    double Gpa;
 
-    public Student() {
-        int id;
-        String firstName;
-        String lastName;
-        double gpa;
+    public Student() {}
 
-    }
-
-    public static void displayData (int ID, String FirstName, String LastName, double GPA) {
-        System.out.printf("");
-        System.out.println(ID + " " + " " + FirstName + "" + LastName + "" + GPA);
+    public Student(int id, String firstName, String lastName, double gpa) {
+        this.Id = id;
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.Gpa = gpa;
 
     }
 
-    public int getID() {
-        return ID;
+    public void outToFile() {
+        try {
+            String outputStr = "";
+            double CUTTOFF = 2.0;
+
+            PrintWriter passingGpaWriter = new PrintWriter(new FileWriter("StuGoodStanding.txt", true));
+            PrintWriter failingGpaWriter = new PrintWriter(new FileWriter("StuAcademicProbation.txt", true));
+
+            outputStr = Id + ", " + FirstName + ", " + LastName + ", " +  Gpa + "\n";
+
+            if (Gpa < CUTTOFF) {
+                failingGpaWriter.write(outputStr);
+            } else {
+                passingGpaWriter.write(outputStr);
+            }
+            passingGpaWriter.close();
+            failingGpaWriter.close();
+        } catch (Exception e) {
+            System.out.println("Error Message: " + e);
+        }
     }
 
-    public void setID(int id) {
-        this.ID = id;
+    /*public void displayData(int Id, String FirstName, String LastName, double Gpa) {
+            System.out.println("ID: " + Id + "\n" +
+                    "First Name: " + FirstName + "\n" +
+                    "Last Name: " + LastName + "\n" +
+                    "GPA: " + Gpa);
+    }*/
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        this.Id = id;
     }
 
     public String getFirstName() {
@@ -44,11 +71,11 @@ public class Student {
         LastName = lastName;
     }
 
-    public double getGPA() {
-        return GPA;
+    public double getGpa() {
+        return Gpa;
     }
 
-    public void setGPA(double gpa) {
-        this.GPA = gpa;
+    public void setGpa(double gpa) {
+        this.Gpa = gpa;
     }
 }
