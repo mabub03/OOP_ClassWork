@@ -1,0 +1,15 @@
+{
+  "id": "12345",
+  "threadId": "5817",
+  "labelIds": [
+    "',/"
+  ],
+  "snippet": "You've got mail",
+  "historyId": "231",
+  "internalDate": string,
+  "payload": {
+    object (MessagePart)
+  },
+  "sizeEstimate": integer,
+  "raw": string
+}
