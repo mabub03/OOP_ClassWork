@@ -8,24 +8,9 @@ import java.util.Properties;
 import com.asc.oop.util.OurSqlConnector;
 
 public class StartDbExProgram {
-	
-
-
 	public static void main(String[] args) throws SQLException {
-		
 		System.out.println("No Conn yet!");
 		Connection ourConn = OurSqlConnector.getLiveWire();
 		System.out.println("I'm alive! LiveWire!");
-		
-		
-		
-		
-				
-		
 	}
-
-	
-	
-	
-
 }

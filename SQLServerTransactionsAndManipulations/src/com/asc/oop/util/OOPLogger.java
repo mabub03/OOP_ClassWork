@@ -14,4 +14,7 @@ public class OOPLogger {
 	public void makeAnInfoLog(String classStr) {
 		LOGGER.log(Level.INFO, classStr);
 	}
+	public void logSumin(Level hotErNot, String ThisIsWhatchaWatchasWant) {
+		LOGGER.log(hotErNot, ThisIsWhatchaWatchasWant);
+	}
 }
